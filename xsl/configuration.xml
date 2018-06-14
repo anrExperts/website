@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="config">
+    <etiquettes>
+        <etiquette element="unittitle">Intitulé : </etiquette>
+        <etiquette element="unitdate">Date : </etiquette>
+        <etiquette element="physdesc">Description matérielle : </etiquette>
+        <etiquette element="accessrestrict">Conditions d’accès : </etiquette>
+        <etiquette element="otherfindaid">Autres instruments de recherche : </etiquette>
+        <etiquette element="unitid">Cote(s) : </etiquette>
+        <etiquette element="origination">Provenance : </etiquette>
+        <etiquette element="acqinfo">Modalités d’entrée : </etiquette>
+        <etiquette element="userestrict">Conditions de reproduction et d’utilisation : </etiquette>
+        <etiquette element="scopecontent">Présentation du contenu : </etiquette>
+        <etiquette element="bioghist">Biographie ou histoire : </etiquette>
+    </etiquettes>
+    <titreTdm>Sommaire</titreTdm>
+</configuration>
