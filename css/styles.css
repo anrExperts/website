@@ -1,0 +1,174 @@
+﻿/*
+ Une vague CSS pour le fichier HTML Dampierre
+ Auteurs: Florence Clavaud (2010-2013), à partir d'une CSS écrite par F. Glorieux en 2008-->
+}*/
+#eadheader {
+    margin-bottom:5em;
+}
+#profiledesc {
+    margin-top:2em;
+    border-top:1px solid #000000;
+    font-family:sans-serif;
+    font-size:80%;
+}
+
+p {
+    text-align:justify;
+    margin-top:1ex;
+    margin-bottom:1em;
+}
+
+span.persName {
+    text-decoration: underline;
+}
+
+/*
+   ceci est un exemple de prise en charge des <c> en CSS, afin de rendre visible
+  les emboîtements.
+ */
+/* S'applique à tous les <c>, on s'arrange pour que cela ne concerne que les <c> racine */
+.c {
+    border-top:5px solid #CCCCCC;
+    padding-top:1em;
+    padding-bottom:1em;
+    margin-top:2em;
+    margin-bottom:2em;
+}
+/* S'applique au <c> qui ont au moins un parent <c>, ne pas oublier d'annuller les règles définies juste au dessus. */
+.c .c {
+    border:1px dotted #808080;
+    padding:1ex;
+margin-left:2.2em;
+}
+/* S'applique au <c> qui ont au moins un grand-parent <c> */
+.c .c .c {
+    border:none;
+    padding:0;
+    margin:0;
+    margin-left:3em;
+}
+/* pour les c de 4e niveau et plus */
+.c .c .c .c {
+}
+/*
+  Cet élément est utilisé pour les intitulés dans les blocs descriptifs
+ */
+h4 {
+    margin-bottom:0;
+    padding-bottom:0;
+    font-family:sans-serif;
+    font-weight:normal;
+    font-size:80%;
+    padding-left:1ex;
+    border-left: #CCCCCC 2em solid;
+    border-bottom: #CCCCCC 1px solid;
+    margin-right:50%
+}
+/* persname */
+/* u {
+    text-decoration:none;
+    border-bottom : 1px dotted #808080;
+}*/
+/* Les présentations tabulaires */
+table.did {
+    font-family:sans-serif;
+    font-size:80%;
+}
+table.did th {
+    vertical-align:top;
+    text-align:right;
+    padding-left:2em;
+    padding-right:1ex;
+    background:#CCCCCC;
+}
+table.did td {
+    border-bottom:1px solid #CCCCCC;
+}
+/* pour la table des matières */
+#tdm {
+    font-family:Arial, Verdana, sans-serif;
+    font-size:12px;
+    padding:1ex;
+    color:#444444;
+    font-family:Arial, Verdana, sans-serif;
+    font-size:12px;
+    background:white;
+}
+/* le conteneur pour l'indentation */
+#tdm blockquote {
+    margin-top:0;
+    margin-bottom:0;
+    margin-right:0;
+    margin-left:1em;
+}
+/* les ligne clicables */
+/*
+   #tdm div {
+  padding-left:12px;
+  background-image: url('puce.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  line-height:100%;
+  margin-bottom:0.7ex;
+  }
+  #tdm div.plus {
+  background-image: url('moins.png');
+  }
+  #tdm blockquote.clos blockquote {
+  display:none;
+  }
+  #tdm blockquote.clos div.plus {
+  background-image: url('plus.png');
+  }
+ */
+#tdm a {
+    color:#666666;
+    text-decoration:none;
+    display:block;
+    padding-left:4px;
+    border-left:1px #CCCCCC solid;
+}
+/* mettre en valeur les liens de la tdm, uniquement au survol. */
+#tdm a:hover {
+    color:#000080;
+    background:#FFFFFF;
+}
+/* barre de côté avec ascenseurs pour afficher la table des matières */
+#tdm {
+    width:30%;
+/* toute la hauteur de la fenêtre */
+    height:100%;
+/* pour avoir les ascenceurs */
+    overflow: auto;
+/* épingler la fenêtre */
+    position:fixed;
+/*
+   les instructions plus haut sont ce qui devrait suffire,
+  plus bas c'est ce qu'il faur pour certains navigateurs
+ */
+    margin:0;
+/*
+    -moz-box-sizing: border-box;
+  box-sizing: border-box;
+ */
+/* simulation de position:fixed pour IE */
+    top:0;
+    left:0;
+    z-index:2;
+/*
+  _position:absolute;
+  _top:expression(0 +
+  ( toReevaluateTop0 = document.documentElement.scrollTop ?
+  document.documentElement.scrollTop :
+  document.body.scrollTop
+  )+ 'px'
+  );
+ */
+}
+#corps {
+    float:right;
+    width:65%;
+    margin-left:29%;
+    padding-left:2em;
+    padding-right:1em;
+}
