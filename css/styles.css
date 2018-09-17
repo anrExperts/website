@@ -1,6 +1,127 @@
+/*
+ * RÉGLAGES TYPOGRAPHIQUES
+ */
+/*
+ * Corps de texte et rythme vertical
+ */
+
+body {
+  font-weight: 300;
+  /* Définition de la taille de police à 14px pour IE6 pour permettre l'agrandissement */
+  font-size: 87.5%; /* 87.5% x 16px (police par défaut de IE6) = 14px */
+  /* adoucissement du noir et du contraste */
+  color: #444;
+  /* Définition de la famille de police. J'utilise un snippet pour un "better helvetica" qui offre une dégradation pour un rendu comparable à un HelveticaNeue. (source : CSS-Tricks http://css-tricks.com/snippets/css/better-helvetica/) */
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  }
+
+html>body {
+  /* Définition spécifique de la taille de police. Règle ignorée par IE6 */
+  font-size: 14px; /* Origine de l'échelle */
+  letter-spacing: 0.146em;
+  }
+
+p {
+  font-size: 1em; /* 14px */
+  /* Définition de la hauteur d'interlignage (ici 21px) */
+  line-height: 1.5em; /* 1.5em x 14px = 21px */
+  /* Correction des marges pour conserver la ligne de base (par défaut les navigateurs utilisent 1em). On utilise les ems pour garantir l'intégrité des mesures verticales lors des redimensionnements */
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  }
+
+/* GRAS */
+strong {
+  font-weight: 600;
+  }
+
+/* Accent coloré pour la première ligne après un h2 */
+h2 + p:first-line {
+  color: #ff4502;
+  }
+
+/* RÈGLES TYPO LISTES ORDONNÉES */
+ol {
+  line-height: 1.5em;
+  padding-left: 1.8em;
+  }
+
+ol li {
+  padding-left: 1.5em;
+  }
+
+/* RÈGLES TYPO LISTES DU CORPS PRINCIPAL */
+article ul li {
+/* ajoute un espace à gauche des éléments de la liste de manière que l'image de 15px de large sur 5px de haut apparaîsse complètement tout en laissant de l'espace avant le texte.*/
+  padding-left: 1.8em;
+  /* Substituer une image pour les items de liste */
+  background: url(../gif/fichier.gif) no-repeat 0 50%;
+  }
+
+/*
+ * RÈGLES TYPO POUR LES TITRES
+ */
+
+/* Espacement entre les lettres des Titres */
+h1, h2, h3, h4, h5, h6 {
+  /*  font-family: "ChunkFiveRegular";*/
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  }
+
+/* Réglage typographique des h1 */
+h1 {
+  font-size: 3em; /* 3 x 14px = 42px */
+  line-height: 1em;
+  margin-top: 0;
+  margin-bottom: 1em; /* rattrapage de la ligne de base */
+  color: #ff4502;
+  letter-spacing: 0.04em;
+  }
+
+/* Réglage typographique des h2 */
+h2 {
+  /* Ici le réglage est assymétrique, une marge haute de 1,5 est combinée avec une marge basse de 0,5. */
+  font-size: 3em; /* 3em x 14px = 42px */
+  line-height: 2em;
+  margin-top: -0.2em; /* je retranche la bordure */
+  margin-bottom: 0;
+  border-bottom: solid 0.2em;
+  /* Mise en capitale de la police */
+  /* text-transform: uppercase;*/
+  }
+
+/* Réglage typographique des h3 */
+h3 {
+  /* Ici le réglage est assymétrique, une marge haute de 1,5 est combinée avec une marge basse de 0,5. */
+  font-size: 2em; /* 2em x 14px = 28px */
+  line-height: 1.333333em; /* 28 / 21 = 1.333333em */
+  margin-top: 2.516666em; /*en retranchant la bordure*/
+  margin-bottom: 1.183333em; /*en retranchant la bordure*/
+  border-bottom: solid 0.15em;
+  border-top:solid 0.15em;
+  /* Mise en capitale de la police */
+  /* text-transform: uppercase;*/
+  }
+
+/* Stylage du bloc de citation avec des images */
+blockquote {
+  /*  font-family: "LeagueGothicRegular";*/
+  width: 60%;
+  min-width: 6em;
+  margin: 1em 1em 4.5em 30%;
+  /* correction des effet de marge pour le positionnement de l'image */
+  padding: 0.25em 1em 1em 0.5em;
+  font-weight: 900;
+  font-size: 3em;
+  letter-spacing: -0.008em;
+  text-align: center;
+  color: #eeeeee;
+  background: url(../gif/haut.gif) no-repeat top left;
+  }
 ﻿/*
  Une vague CSS pour le fichier HTML Dampierre
- Auteurs: Florence Clavaud (2010-2013), à partir d'une CSS écrite par F. Glorieux en 2008-->
+ Auteurs: Florence Clavaud (2010-2013), à partir d'une CSS écrite par F. Glorieux en 2008 -->
 }*/
 #eadheader {
     margin-bottom:5em;
@@ -8,7 +129,6 @@
 #profiledesc {
     margin-top:2em;
     border-top:1px solid #000000;
-    font-family:sans-serif;
     font-size:80%;
 }
 
@@ -37,8 +157,8 @@ span.persName {
 /* S'applique au <c> qui ont au moins un parent <c>, ne pas oublier d'annuller les règles définies juste au dessus. */
 .c .c {
     border:1px dotted #808080;
-    padding:1ex;
-margin-left:2.2em;
+    padding:3ex;
+    margin-left:2.2em;
 }
 /* S'applique au <c> qui ont au moins un grand-parent <c> */
 .c .c .c {
@@ -50,20 +170,7 @@ margin-left:2.2em;
 /* pour les c de 4e niveau et plus */
 .c .c .c .c {
 }
-/*
-  Cet élément est utilisé pour les intitulés dans les blocs descriptifs
- */
-h4 {
-    margin-bottom:0;
-    padding-bottom:0;
-    font-family:sans-serif;
-    font-weight:normal;
-    font-size:80%;
-    padding-left:1ex;
-    border-left: #CCCCCC 2em solid;
-    border-bottom: #CCCCCC 1px solid;
-    margin-right:50%
-}
+
 /* persname */
 /* u {
     text-decoration:none;
@@ -86,13 +193,8 @@ table.did td {
 }
 /* pour la table des matières */
 #tdm {
-    font-family:Arial, Verdana, sans-serif;
-    font-size:12px;
-    padding:1ex;
-    color:#444444;
-    font-family:Arial, Verdana, sans-serif;
-    font-size:12px;
-    background:white;
+  font-size:1em;
+  padding:1ex;
 }
 /* le conteneur pour l'indentation */
 #tdm blockquote {

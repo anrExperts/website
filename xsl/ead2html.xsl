@@ -12,8 +12,8 @@
     
     <xsl:strip-space elements="*" />
     
-    <xsl:param name="tdm" />
-    <xsl:variable name="config" select="document('configuration.xml')" />
+    <xsl:param name="tdm" select="'oui'" />
+    <xsl:variable name="config" select="document('configuration.xml')/config:configuration/config:etiquettes" />
     
     <xsl:template match="/">
         <xsl:apply-templates />
@@ -146,18 +146,9 @@
             </xsl:for-each>
             -->
         </xsl:element>
-        <!--
-        <xsl:comment>texte d'un commentaire à fournir en sortie</xsl:comment>
-        -->
-        <!--
-        <xsl:attribute name="nomAttribut">valeur de l'attribut</xsl:attribute>
-        -->
+        
     </xsl:template>
-    <!-- si voulait recopier les commentaires
-    <xsl:template match="comment()">
-        <xsl:copy-of select="."/>
-    </xsl:template>
-    -->
+    
     <!-- description archivistique -->
     <xsl:template match="archdesc">
         <!-- <xsl:apply-templates select="*[following-sibling::dsc]"/> -->
@@ -249,9 +240,9 @@ d'ailleurs -->
     <xsl:template name="sortir-un-label">
         <xsl:param name="nomElement" />
         <xsl:choose>
-            <xsl:when test="$config//config:configuration/config:etiquettes/config:etiquette[@element=$nomElement]">
+            <xsl:when test="$config//config:etiquette[@element=$nomElement]">
                 <xsl:value-of
-                    select="$config//config:configuration/config:etiquettes/config:etiquette[@element=$nomElement]" />
+                    select="$config//config:etiquette[@element=$nomElement]" />
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text>Pas de label pour l’élément </xsl:text>
